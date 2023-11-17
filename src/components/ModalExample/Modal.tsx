@@ -3,7 +3,7 @@ import styled from '@emotion/styled/macro';
 import { CSSTransition } from 'react-transition-group';
 import './modal.css';
 
-import Portal from './Portal';
+import Portal from '../Portal';
 
 const Overlay = styled.div`
   position: fixed;
