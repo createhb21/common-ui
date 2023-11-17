@@ -1,15 +1,19 @@
-import React from 'react';
-import SkeletonExample from './components/SkeletonExample';
-import ModalExample from './components/ModalExample';
-import PaginationExample from './components/PaginationExample';
+import IENotSupportExample from 'components/IENotSupportExample';
+import { browserInfo } from 'utils/browserName';
+import { globalStyles, theme } from 'style';
+import { Global, ThemeProvider } from '@emotion/react';
 
 function App() {
   return (
-    <>
-      {/* <SkeletonExample />; */}
-      {/* <ModalExample /> */}
-      <PaginationExample />
-    </>
+    <ThemeProvider theme={theme}>
+      <Global styles={globalStyles} />
+      {browserInfo() === 'MS IE' ? (
+        <IENotSupportExample />
+      ) : (
+        // <PaginationExample />
+        <IENotSupportExample />
+      )}
+    </ThemeProvider>
   );
 }
 
