@@ -1,7 +1,11 @@
 import dayjs from 'dayjs';
 import { languages } from 'assets/lang/i18n';
 
-export type ColumnTable = Record<string, string>;
+export interface Toast {
+  id: string;
+  type?: 'success' | 'warning';
+  content: string;
+}
 
 export interface MonthYear {
   value: dayjs.Dayjs;
@@ -27,3 +31,4 @@ export type KeyOf<T> = keyof T;
 export type Languages = keyof (typeof languages)[number];
 
 export type TableBodyDataType<T> = (key: KeyOf<T>, data: T) => React.ReactNode;
+export type ColumnTable = Record<string, string>;
